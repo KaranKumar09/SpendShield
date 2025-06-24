@@ -13,12 +13,10 @@ app.use(cors()) ;
 
 //routes
 readdirSync('./routes').map((route) => app.use('/api/v1',require('./routes/' + route)));
-
-const server = () =>{
+    app.get('/', (req, res) => {
+        res.send('Welcome to the Expense Tracker API') ;
+    }) ;
     app.listen(PORT, () => {
         db();
         console.log(`Server is running on port ${PORT}`) ;
     }) ;
-}
-
-server()

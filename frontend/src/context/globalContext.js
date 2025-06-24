@@ -19,6 +19,7 @@ export const GlobalProvider = ({children}) => {
             .catch((err) =>{
                 setError(err.response.data.message)
             })
+        console.log(response)
         getIncomes()
     }
 
